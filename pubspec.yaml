@@ -39,13 +39,14 @@ dependencies:
   google_fonts: ^2.1.0
   google_sign_in: ^4.5.9
   intl:
-  json_serializable: ^4.0.1
+  json_serializable: ^6.0.0
   page_transition:
   rxdart: ^0.26.0
   sign_in_with_apple: ^3.0.0
   timeago:
   url_launcher:
-
+  flutter_svg: 1.1.1+1
+  provider: 6.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -55,6 +56,8 @@ dev_dependencies:
   build_runner: ^1.11.5
   built_value_generator: ^8.0.4
   flutter_launcher_icons: ^0.9.1
+  flutter_gen_runner: 5.0.0
+  very_good_analysis: 3.0.0
 
   flutter_test:
     sdk: flutter
@@ -84,6 +87,10 @@ flutter:
     - assets/videos/
     - assets/audios/
     - assets/lottie_animations/
+    - assets/games/
+    - assets/symbols/
+    - assets/svg/
+    - assets/google_fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

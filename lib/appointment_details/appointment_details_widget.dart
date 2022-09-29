@@ -350,7 +350,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                           .delete();
                       Navigator.pop(context);
                     },
-                    text: 'Cancel Appointment',
+                    text: 'Cancel Challenge',
                     options: FFButtonOptions(
                       width: 230,
                       height: 50,

@@ -192,7 +192,7 @@ class _AddAnotherProfileWidgetState extends State<AddAnotherProfileWidget> {
                       fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.grayLight,
                     ),
-                    hintText: 'What types of allergies do they have..',
+                    hintText: 'What game do you play most..',
                     hintStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: Color(0x98FFFFFF),

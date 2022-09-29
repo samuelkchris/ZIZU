@@ -58,7 +58,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       image: DecorationImage(
                         fit: BoxFit.fitWidth,
                         image: Image.asset(
-                          'assets/images/page_background.png',
+                          'assets/images/Black And Blue Bold Esport Tournament Instagram Story.png',
                         ).image,
                       ),
                     ),
@@ -75,7 +75,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/images/LOGO_STELLAR.png',
+                                  'assets/images/app_launcher_icon.png',
                                   width: 200,
                                   height: 130,
                                   fit: BoxFit.fitHeight,

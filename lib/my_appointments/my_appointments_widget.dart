@@ -219,7 +219,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                       .fromSTEB(8, 4, 8, 4),
                                                   child: Text(
                                                     dateTimeFormat(
-                                                        'MMMMEEEEd',
+                                                        'yMMMd',
                                                         listViewAppointmentsRecord
                                                             .appointmentTime),
                                                     style: FlutterFlowTheme

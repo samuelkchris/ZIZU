@@ -152,7 +152,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/noUpcomingChallenges.png',
+                        'assets/images/noUpcomingAppointments.png',
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: 56,
                         fit: BoxFit.cover,
@@ -165,7 +165,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Column(
+                      Expanded(
+                          child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Material(
@@ -410,7 +411,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                           )
                         ],
-                      )
+                      ))
                     ],
                   ),
                 )
