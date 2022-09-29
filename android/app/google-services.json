@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "211317508595",
+    "project_id": "zizu-f8ae2",
+    "storage_bucket": "zizu-f8ae2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211317508595:android:73e53238cd6b399b57aa86",
+        "android_client_info": {
+          "package_name": "flutter.flow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211317508595-eu1148pvio6ib20d4m9l6ipd0dg3hspk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmYsGVBuJLOIQWIF82nc9NdvTFl6JWSfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211317508595-eu1148pvio6ib20d4m9l6ipd0dg3hspk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "211317508595-vf2sl362k14etkat7i8gpa6gfjru57kj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "flutter.flow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
