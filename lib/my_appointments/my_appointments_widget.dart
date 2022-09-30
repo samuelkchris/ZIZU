@@ -29,17 +29,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
             fontFamily: 'Lexend Deca',
           ),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
-            child: Image.asset(
-              'assets/images/health-ai_logoHorz.png',
-              width: 120,
-              height: 40,
-              fit: BoxFit.fitWidth,
-            ),
-          )
-        ],
+        actions: [],
         centerTitle: false,
         elevation: 0,
       ),

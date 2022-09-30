@@ -39,7 +39,13 @@ class _BookingOldWidgetState extends State<BookingOldWidget> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 1,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.darkBackground,
+        color: FlutterFlowTheme.background,
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: Image.asset(
+            'assets/images/Red & Pink Modern Gaming Phone Wallpaper.png',
+          ).image,
+        ),
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
@@ -298,7 +304,7 @@ class _BookingOldWidgetState extends State<BookingOldWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           20, 4, 0, 0),
                                       child: Text(
-                                        dateTimeFormat('MMMMEEEEd', datePicked),
+                                        dateTimeFormat('yMMMd', datePicked),
                                         style:
                                             FlutterFlowTheme.bodyText2.override(
                                           fontFamily: 'Lexend Deca',

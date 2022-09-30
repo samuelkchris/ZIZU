@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:zizu/flutter_flow/flutter_flow_radio_button.dart';
 import 'package:zizu/flutter_flow/flutter_flow_theme.dart';
@@ -187,7 +186,7 @@ class _AddAnotherProfileWidgetState extends State<AddAnotherProfileWidget> {
                   controller: phoneNumberController3,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Persons Ailments',
+                    labelText: 'Favorite Game',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.grayLight,

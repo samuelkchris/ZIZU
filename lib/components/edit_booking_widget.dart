@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-
 import 'package:zizu/auth/auth_util.dart';
 import 'package:zizu/backend/backend.dart';
 import 'package:zizu/flutter_flow/flutter_flow_drop_down.dart';
@@ -41,7 +40,13 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 1,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.darkBackground,
+        color: FlutterFlowTheme.background,
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: Image.asset(
+            'assets/images/Red & Pink Modern Gaming Phone Wallpaper.png',
+          ).image,
+        ),
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
@@ -60,7 +65,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                 child: Text(
-                  'Edit Appointment',
+                  'Edit Challenge',
                   style: FlutterFlowTheme.title3.override(
                     fontFamily: 'Lexend Deca',
                   ),
@@ -73,7 +78,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                       child: Text(
-                        'Edit the fields below in order to change your appointment.',
+                        'Edit the fields below in order to change your challenge.',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lexend Deca',
                         ),
@@ -145,10 +150,10 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                   initialOption: dropDownValue ??=
                       widget.userAppointment.appointmentType,
                   options: [
-                    'Type of Appointment',
-                    'Doctors Visit',
-                    'Routine Checkup',
-                    'Scan/Update'
+                    'Available Challenges',
+                    'FIFA 23',
+                    'CALL OF DUTY',
+                    'BLUR'
                   ].toList(),
                   onChanged: (val) => setState(() => dropDownValue = val),
                   width: MediaQuery.of(context).size.width * 0.9,
@@ -177,7 +182,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                   controller: problemDescriptionController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'What\'s the problem?',
+                    labelText: 'Tell us about yourself',
                     labelStyle: FlutterFlowTheme.bodyText1.override(
                       fontFamily: 'Lexend Deca',
                     ),
@@ -263,7 +268,7 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       20, 4, 0, 0),
                                   child: Text(
-                                    dateTimeFormat('MMMMEEEEd',
+                                    dateTimeFormat('yMMMd',
                                         widget.userAppointment.appointmentTime),
                                     style: FlutterFlowTheme.bodyText2.override(
                                       fontFamily: 'Lexend Deca',

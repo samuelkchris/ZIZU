@@ -1,11 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:zizu/gam/gen/assets.gen.dart';
 import 'package:zizu/login_page/login_page_widget.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'auth/firebase_user_provider.dart';
-import 'find_symptoms/find_symptoms_widget.dart';
+import 'gam/app/view/app.dart';
 import 'home_page/home_page_widget.dart';
 import 'my_appointments/my_appointments_widget.dart';
 import 'profile_page/profile_page_widget.dart';
@@ -13,6 +17,12 @@ import 'profile_page/profile_page_widget.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  GoogleFonts.config.allowRuntimeFetching = false;
+
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString(Assets.googleFonts.ofl);
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
   runApp(MyApp());
 }
 
@@ -86,7 +96,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'homePage': HomePageWidget(),
       'myAppointments': MyAppointmentsWidget(),
-      'findSymptoms': FindSymptomsWidget(),
+      'Games': Gam(),
       'profilePage': ProfilePageWidget(),
     };
     return Scaffold(
@@ -113,7 +123,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.date_range_rounded,
               size: 24,
             ),
-            label: 'Appointments',
+            label: 'Challenges',
           ),
           BottomNavigationBarItem(
             icon: Icon(

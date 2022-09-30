@@ -158,112 +158,120 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      StreamBuilder<AppointmentsRecord>(
-                        stream: AppointmentsRecord.getDocument(
-                            appointmentDetailsAppointmentsRecord.reference),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 40,
-                                height: 40,
-                                child: SpinKitPumpingHeart(
-                                  color: FlutterFlowTheme.primaryColor,
-                                  size: 40,
-                                ),
-                              ),
-                            );
-                          }
-                          final containerAppointmentsRecord = snapshot.data;
-                          return Material(
-                            color: Colors.transparent,
-                            elevation: 3,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.darkBackground,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 0, 12, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Card(
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      Expanded(
+                          flex: 1,
+                          child: StreamBuilder<AppointmentsRecord>(
+                            stream: AppointmentsRecord.getDocument(
+                                appointmentDetailsAppointmentsRecord.reference),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40,
+                                    height: 40,
+                                    child: SpinKitPumpingHeart(
                                       color: FlutterFlowTheme.primaryColor,
-                                      elevation: 2,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            2, 2, 2, 2),
-                                        child: Container(
-                                          width: 40,
-                                          height: 40,
-                                          clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
+                                      size: 40,
+                                    ),
+                                  ),
+                                );
+                              }
+                              final containerAppointmentsRecord = snapshot.data;
+                              return Material(
+                                color: Colors.transparent,
+                                elevation: 3,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.9,
+                                  height: 70,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.darkBackground,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12, 0, 5, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Card(
+                                          clipBehavior:
+                                              Clip.antiAliasWithSaveLayer,
+                                          color: FlutterFlowTheme.primaryColor,
+                                          elevation: 2,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(40),
                                           ),
-                                          child: Image.asset(
-                                            'assets/images/UI_avatar_2@3x.png',
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    2, 2, 2, 2),
+                                            child: Container(
+                                              width: 40,
+                                              height: 40,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.asset(
+                                                'assets/images/UI_avatar_2@3x.png',
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 0, 0, 0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12, 0, 0, 0),
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    appointmentDetailsAppointmentsRecord
+                                                        .appointmentName,
+                                                    style: FlutterFlowTheme
+                                                        .subtitle1
+                                                        .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color: FlutterFlowTheme
+                                                          .textColor,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
                                               Text(
                                                 appointmentDetailsAppointmentsRecord
-                                                    .appointmentName,
+                                                    .appointmentEmail,
                                                 style: FlutterFlowTheme
-                                                    .subtitle1
+                                                    .bodyText1
                                                     .override(
                                                   fontFamily: 'Lexend Deca',
                                                   color: FlutterFlowTheme
-                                                      .textColor,
+                                                      .primaryColor,
                                                 ),
                                               )
                                             ],
                                           ),
-                                          Text(
-                                            appointmentDetailsAppointmentsRecord
-                                                .appointmentEmail,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.primaryColor,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          );
-                        },
-                      )
+                              );
+                            },
+                          ))
                     ],
                   ),
                 ),

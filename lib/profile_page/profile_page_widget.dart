@@ -254,7 +254,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Ailments',
+                                    'Game',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Lexend Deca',
@@ -369,7 +369,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                               child: Container(
                                 height: 100,
                                 child: Center(
-                                  child: Text('No results.'),
+                                  child: Text('No available appointments.'),
                                 ),
                               ),
                             );

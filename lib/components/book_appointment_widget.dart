@@ -92,7 +92,13 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 1,
       decoration: BoxDecoration(
-        color: FlutterFlowTheme.darkBackground,
+        color: FlutterFlowTheme.background,
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: Image.asset(
+            'assets/images/Red & Pink Modern Gaming Phone Wallpaper.png',
+          ).image,
+        ),
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
@@ -128,7 +134,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                     child: Text(
-                      'Book Appointment',
+                      'Book challenge',
                       style: FlutterFlowTheme.title3.override(
                         fontFamily: 'Lexend Deca',
                       ),
@@ -141,7 +147,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                           child: Text(
-                            'Fill out the information below in order to book your appointment with our office.',
+                            'Fill out the information below in order to book your challenge with our Station.',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Lexend Deca',
                             ),
@@ -215,10 +221,10 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                     padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                     child: FlutterFlowDropDown(
                       options: [
-                        'Type of Appointment',
-                        'Doctors Visit',
-                        'Routine Checkup',
-                        'Scan/Update'
+                        'Available Challenges',
+                        'FIFA 23',
+                        'CALL OF DUTY',
+                        'BLUR'
                       ].toList(),
                       onChanged: (val) => setState(() => dropDownValue = val),
                       width: MediaQuery.of(context).size.width * 0.9,
@@ -247,7 +253,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                       controller: problemDescriptionController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'What\'s the problem?',
+                        labelText: 'Tell us about yourself',
                         labelStyle: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lexend Deca',
                         ),
@@ -335,7 +341,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           20, 4, 0, 0),
                                       child: Text(
-                                        dateTimeFormat('MMMMEEEEd', datePicked),
+                                        dateTimeFormat('yMMMd', datePicked),
                                         style:
                                             FlutterFlowTheme.bodyText2.override(
                                           fontFamily: 'Lexend Deca',

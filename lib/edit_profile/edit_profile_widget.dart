@@ -281,7 +281,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Ailments',
+                        labelText: 'Game',
                         labelStyle: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lexend Deca',
                           color: FlutterFlowTheme.grayLight,
@@ -336,46 +336,50 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        StreamBuilder<UsersRecord>(
-                          stream: UsersRecord.getDocument(
-                              editProfileUsersRecord.reference),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 40,
-                                  height: 40,
-                                  child: SpinKitPumpingHeart(
-                                    color: FlutterFlowTheme.primaryColor,
-                                    size: 40,
+                        Expanded(
+                            flex: 1,
+                            child: StreamBuilder<UsersRecord>(
+                              stream: UsersRecord.getDocument(
+                                  editProfileUsersRecord.reference),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 40,
+                                      height: 40,
+                                      child: SpinKitPumpingHeart(
+                                        color: FlutterFlowTheme.primaryColor,
+                                        size: 40,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                final radioButtonUsersRecord = snapshot.data;
+                                return FlutterFlowRadioButton(
+                                  options: ['Male', 'Female', 'Undisclosed'],
+                                  onChanged: (value) {
+                                    setState(() => radioButtonValue = value);
+                                  },
+                                  optionHeight: 25,
+                                  textStyle:
+                                      FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: FlutterFlowTheme.textColor,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              );
-                            }
-                            final radioButtonUsersRecord = snapshot.data;
-                            return FlutterFlowRadioButton(
-                              options: ['Male', 'Female', 'Undisclosed'],
-                              onChanged: (value) {
-                                setState(() => radioButtonValue = value);
+                                  textPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 0, 0.5, 0),
+                                  buttonPosition: RadioButtonPosition.left,
+                                  direction: Axis.horizontal,
+                                  radioButtonColor:
+                                      FlutterFlowTheme.primaryColor,
+                                  toggleable: false,
+                                  horizontalAlignment: WrapAlignment.start,
+                                  verticalAlignment: WrapCrossAlignment.start,
+                                );
                               },
-                              optionHeight: 25,
-                              textStyle: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Lexend Deca',
-                                color: FlutterFlowTheme.textColor,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                              buttonPosition: RadioButtonPosition.left,
-                              direction: Axis.horizontal,
-                              radioButtonColor: FlutterFlowTheme.primaryColor,
-                              toggleable: false,
-                              horizontalAlignment: WrapAlignment.start,
-                              verticalAlignment: WrapCrossAlignment.start,
-                            );
-                          },
-                        )
+                            ))
                       ],
                     ),
                   ),
@@ -396,7 +400,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       },
                       text: 'Save Changes',
                       options: FFButtonOptions(
-                        width: 230,
+                        width: 210,
                         height: 56,
                         color: FlutterFlowTheme.primaryColor,
                         textStyle: FlutterFlowTheme.subtitle2.override(
